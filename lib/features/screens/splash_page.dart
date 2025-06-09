@@ -1,8 +1,24 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'login_page.dart';
+import 'package:go_router/go_router.dart';
 
-class SplashPage extends StatelessWidget {
+class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
+
+  @override
+  State<SplashPage> createState() => _SplashPageState();
+}
+
+class _SplashPageState extends State<SplashPage> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(const Duration(seconds: 5), () {
+      context.go('/login');
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
